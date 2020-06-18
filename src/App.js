@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Universe from './components/Universe.js';
 
-import './App.css';
+import './App.scss';
 
 export default class App extends Component {
 
