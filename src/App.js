@@ -10,13 +10,16 @@ export default class App extends Component {
     this.state = {
       universe: new Universe(),
       size: [25,25],
-      gameRunning: false
+      gameRunning: false,
+      speed: 1000
     }
 
     this.handleColumnChange = this.handleColumnChange.bind(this);
     this.handleRowChange = this.handleRowChange.bind(this);
     this.startGame = this.startGame.bind(this);
+    this.changeSpeed = this.changeSpeed.bind(this);
     this.stopGame = this.stopGame.bind(this);
+    this.resetGame = this.resetGame.bind(this);
     this.renderBoard = this.renderBoard.bind(this);
     this.storeCell = this.storeCell.bind(this);
   }
@@ -69,15 +72,39 @@ export default class App extends Component {
       this.setState({
         gameRunning: true,
       }, () => {
-        this.intervalRef = setInterval(()=> this.runGame(), 1000);
+        this.intervalRef = setInterval(()=> this.runGame(), this.state.speed);
       })
     }
   }
+
+  changeSpeed(e){
+    console.log('changed speed to ', e.target.value)
+    this.setState({
+        speed: e.target.value
+      })
+    if(this.state.gameRunning){
+      this.stopGame()
+      setTimeout(()=> {this.startGame()}, 100)
+    }
+  }
+
 
   stopGame(){
     console.log('stopped game')
     this.setState({
       gameRunning: false
+    }, () => {
+      if(this.intervalRef){
+        clearInterval(this.intervalRef)
+      }
+    })
+  }
+
+  resetGame(){
+    console.log('reset game')
+    this.setState({
+      gameRunning: false,
+      universe: new Universe()
     }, () => {
       if(this.intervalRef){
         clearInterval(this.intervalRef)
@@ -133,11 +160,17 @@ export default class App extends Component {
                 <input className="input" type="text" value={this.state.size[0]} onChange={this.handleColumnChange} />
               </label>
 
+              <label className="label">
+                Change speed:
+                <input className="input" type="text" value={this.state.speed} onChange={(e) => {this.changeSpeed(e)}} />
+              </label>
+
             </div>
 
             <div className="headerButtons">
               <button className="submit" onClick={this.startGame}>Start</button>
               <button className="submit" onClick={this.stopGame}>Stop</button>
+              <button className="submit" onClick={this.resetGame}>Reset</button>
             </div>
 
             Generation: {this.state.universe.getGeneration()}
