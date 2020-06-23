@@ -1,0 +1,91 @@
+
+ 
+ * {
+  font-family: 'Faustina', serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  }
+
+  body {
+    background-image: url("./parthenon-vapor.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .header-labels {
+    padding: 5px;
+    // background-color: blue;
+  }
+
+  label {
+    margin-left: 5px;
+    color: lavenderblush;
+  }
+
+  .headerButtons {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 75%;
+  }
+
+  button {
+    color: blueviolet;
+    border: 2px solid limegreen;
+    background-color: lavenderblush;
+    width: 120px;
+    padding: 5px 0;
+  }
+
+  button:hover {
+    border: 2px solid blueviolet;
+    background-color: lavenderblush;
+    color: limegreen;
+  }
+
+  input {
+    padding: 2px;
+    text-align: center;
+    color: blueviolet;
+    width: 100px;
+    margin: 0 5px;
+    background-color: lavenderblush;
+  }
+
+  .board {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+  }
+
+  .cellContainerDead {
+    display: flex;
+    padding: 10px;
+    margin: 1px;
+    border: 1px solid black;
+  }
+  
+  .cellContainerLive {
+    display: flex;
+    padding: 10px;
+    margin: 1px;
+    border: 1px solid black;
+  }
+
+  .gen {
+    padding: 5px;
+    color: blueviolet;
+    background-color: lavenderblush;
+    border: 2px solid limegreen;
+    width: 200px;
+    text-align: center;
+  }
