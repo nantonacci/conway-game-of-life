@@ -39,7 +39,7 @@ export default class App extends Component {
     if(!this.state.gameRunning){
       let actualSize = this.state.size;
 
-      if(e.target.value < 25){
+      if(e.target.value < 90){
         actualSize[1] = e.target.value;
       } else {
         actualSize[1] = 25;
@@ -57,7 +57,7 @@ export default class App extends Component {
     if(!this.state.gameRunning){
       let actualSize = this.state.size;
 
-      if(e.target.value < 25){
+      if(e.target.value < 90){
         actualSize[0] = e.target.value;
       } else {
         actualSize[0] = 25;
