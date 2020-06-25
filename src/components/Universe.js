@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default class Universe {
     constructor(generation = 0, liveCells = new Map()){

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Universe from './components/Universe.js';
+import Rules from './components/Rules.js';
 
 import './App.scss';
 
@@ -217,8 +218,10 @@ export default class App extends Component {
 
   render(){
     return (
-
+      <>
+<Rules />
         <div className="container">
+          
           <div className="header">
             <div className="header-labels">
 
@@ -259,7 +262,7 @@ export default class App extends Component {
           </div>
           <p className="gen">Generation: {this.romanize()}</p>
         </div>
-
+</>
     );
   }
 }

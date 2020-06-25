@@ -21,6 +21,20 @@
     width: 90%;
   }
 
+  .rules {
+    width: 300px;
+    border: 2px solid limegreen;
+    background-color: silver;
+    position: absolute;
+    padding: 0 10px;
+  }
+  
+  .rules p {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
   .header-labels {
     padding: 5px;
   }
