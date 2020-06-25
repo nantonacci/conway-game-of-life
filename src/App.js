@@ -247,7 +247,7 @@ export default class App extends Component {
               <button onClick={this.startGame}>Start</button>
               <button onClick={this.stopGame}>Stop</button>
               <button onClick={this.resetGame}>Reset</button>
-              <button onClick={this.randomize}>Randomize</button>
+              {/* <button onClick={this.randomize}>Randomize</button> */}
             </div>
 
             
