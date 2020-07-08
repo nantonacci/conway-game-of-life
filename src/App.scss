@@ -35,6 +35,18 @@
     font-weight: 300;
   }
 
+  @media screen and (max-width: 1550px) {
+    .rules{
+      top: 100px;
+    }
+  }
+
+  @media screen and (max-width: 1270px) {
+    .rules{
+      display: none;
+    }
+  }
+
   .header-labels {
     padding: 5px;
   }
@@ -50,6 +62,7 @@
     margin: 20px auto;
     width: 75%;
   }
+  
 
   button {
     color: blueviolet;
